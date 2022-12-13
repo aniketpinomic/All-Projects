@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Management System</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<style>
+body {
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+}
+
+button {
+	background-color: #04AA6D;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: 5px;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+.imgavator {
+	padding-left: 460px;
+	text-align: center;
+	padding-top: 50px;
+	height: 1000px;
+	width: 1000px;
+}
+
+img.avatar {
+	width: 50%;
+	border-radius: 30%;
+}
+
+.container {
+	padding-left: 300px;
+	padding-right: 300px;
+	color: black;
+}
+
+span.password {
+	float: right;
+	padding-top: 16px;
+}
+
+body {
+	background-image:
+		url('https://wallpaperaccess.com/full/1624848.jpg');
+}
+</style>
+</head>
+<body>
+	<div><br>
+
+		<h1 style="text-align: center">Login Form</h1>
+		<form th:action="@{/validatingData}" th:object=${adminObj}
+			method="get">
+			<div class="container">
+				<label for="username"><b>Username</b></label> 
+				<input th:field="*{username}" type="text" placeholder="Enter Username" name="username" required> 
+					
+				<label for="password"><b>Password</b></label>
+				<input th:field="*{password}" type="password" placeholder="Enter Password" name="password" required> 
+					
+				<label><input type="checkbox"  name="remember"> Remember me  </label> 
+				
+				<a href="/validatingData"><button type="submit">Login</button></a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
